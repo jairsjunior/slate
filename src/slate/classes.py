@@ -53,7 +53,7 @@ class PDF(list):
         self.laparams = LAParams(char_margin=char_margin, line_margin=line_margin, word_margin=word_margin)
 
         if PYTHON_3:
-            self.doc = PDFDocument()
+            self.doc = PDFDocument(self.parser)
             self.parser.set_document(self.doc)
             self.doc.set_parser(self.parser)
             self.doc.initialize(password)
